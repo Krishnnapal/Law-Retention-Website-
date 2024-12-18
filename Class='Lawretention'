@@ -1,0 +1,81 @@
+<html lang = "en-US">
+   <head>
+      <meta charset = "UTF-8">
+      <title>Demo SDC Personal Website</title>
+      <link rel = "stylesheet" type = "text/css" href = "./style.css" />
+   </head>
+   <script type="text/javascript">
+      document.selectedPage = "home";
+      
+      function toggleNav(clickedPage){
+      	// Deselect all pages
+      	for(index in document.getElementById("main-nav").childNodes){
+      		var child = document.getElementById("main-nav").childNodes[index];
+      		child.className="";
+      		// Hide Page
+      		if(child.id)
+      		{
+      			let pageName = child.id + "-Page";
+      			document.getElementById(pageName).className = "hidden";
+      		}
+      		
+      	}
+      	
+      	//  Set current page as chosen
+      	clickedPage.className="chosen";
+      
+      	// Make current page visible
+      	let pageName = clickedPage.id + "-Page";
+      	document.getElementById(pageName).className = "";
+      }
+   </script>
+   <body>
+      <nav id = "main-nav" class="main-nav">
+         <a id="Home" onclick="toggleNav(this)" class="chosen" href="#">Home</a>
+         <a id="About" onclick="toggleNav(this)" href="#">About</a>
+         <a id="Resume" onclick="toggleNav(this)" href="#">Resume</a>
+         <a id="Contact" onclick="toggleNav(this)" href="#">Contact</a>
+      </nav>
+      <div id = "All-Pages">
+         <div id = "Home-Page">
+            <header class="site-header">
+               <span>Computer Science & Computer Engineering</span>
+               <h1>John Doe</h1>
+               <a id="scrollToMain" href="#main" class="cta">A little more about me...</a>
+            </header>
+            <section id="main" class="main-content">
+            <section class="page-section group">
+               <section class="webdesign">
+                  <h2>What languages and software am I proficient in?</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore nostrum et, iusto unde ratione! Voluptatum ducimus repellendus non asperiores qui voluptate possimus excepturi dolor, quis quibusdam nostrum ad, nulla nisi, a ipsum. Tempore optio perferendis distinctio iusto totam aperiam voluptatem esse ipsam eum maxime. Sunt nesciunt cupiditate nobis amet voluptatibus.</p>
+                  <a href="" class="readmore">Learn more.</a>
+               </section>
+               <section class="webdevelopment">
+                  <h2>What relevant work experience do I have?</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusamus sapiente, laborum, incidunt quam blanditiis alias mollitia repellat quibusdam, temporibus qui? Numquam quo recusandae asperiores velit, autem expedita delectus labore eveniet, hic itaque molestias commodi suscipit voluptatibus debitis architecto dignissimos atque. Placeat mollitia doloribus corporis consectetur commodi soluta, quo inventore!</p>
+                  <a href="" class="readmore">Learn more.</a>
+               </section>
+               <div class="group"></div>
+               <h2>Interesting stuff.</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque laudantium maxime, atque esse, animi et, pariatur incidunt quaerat id quisquam iure odit ab impedit ullam. Voluptates nesciunt, tempora ex sapiente culpa, id quasi libero, accusantium, qui sit sed expedita? Iusto dolore provident illum optio expedita quisquam eveniet eaque consectetur animi.</p>
+               <h3>Interesting facts about us.</h3>
+               <ul>
+                  <li>Lorem ipsum dolor sit.</li>
+                  <li>Porro, eaque, quibusdam. Impedit!</li>
+                  <li>Modi non, itaque nostrum?</li>
+                  <li>Cumque nam quasi, unde?</li>
+                  <li>Ducimus iure ab suscipit.</li>
+                  <li>Sit quia ullam voluptatum.</li>
+               </ul>
+               <a href="" class="readmore">Learn more.</a>
+            </section>
+         </div>
+         <div id = "About-Page" class = "hidden">
+         </div>
+         <div id = "Resume-Page" class = "hidden">
+         </div>
+         <div id = "Contact-Page" class = "hidden">
+         </div>
+      </div>
+   </body>
+</html>
